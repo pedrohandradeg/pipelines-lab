@@ -36,9 +36,9 @@ jobs:
                   echo " Total de elementos obrigatórios: 5"
             
             - name: Váriaveis e contexto
-                run: |
+                run: | 
                     echo "== VARIÁVEIS E CONTEXTO =="
-                    echo " Variáveis env: ${ env.NODE_VERSION} "
+                    echo " Variáveis env: ${{ env.NODE_VERSION}} "
                     echo "1. env: Variáveis de ambiente para o workflow"
                     echo "2. context: Informações sobre o ambiente de execução"
                     echo ""
