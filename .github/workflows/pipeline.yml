@@ -1,45 +1,45 @@
 name: "Estrutura de Diretórios e Arquivos"
 
 on:
-    push:
-        branches: [ main ]
-    workflow_dispatch:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
 env:
-    NODE_VERSION: '18'
+  NODE_VERSION: '18'
 
 jobs:
-    demonstrando-estrutura:
-        name: "Demonstrar Estrutura Básica"
-        runs-on: ubuntu-latest
+  demonstrando-estrutura:
+    name: "Demonstrar Estrutura Básica"
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout do Código
-              uses: actions/checkout@v4
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
 
-            - name: Mostrar estrutura .github/workflows
-                run: |
-                    echo "== ESTRUTURA DE DIRETÓRIOS E ARQUIVOS .github/workflows =="
-                    ls -la .github/workflows
-                    echo ""
-                    echo " Total de workflows: $(ls -1 .github/workflows | wc -l)"
+      - name: Mostrar estrutura .github/workflows
+        run: |
+          echo "== ESTRUTURA DE DIRETÓRIOS E ARQUIVOS .github/workflows =="
+          ls -la .github/workflows
+          echo ""
+          echo " Total de workflows: $(ls -1 .github/workflows | wc -l)"
 
-            - name: Elementos obrigatórios do workflow
-              run: |
-                  echo "== ELEMENTOS OBRIGATÓRIOS DO WORKFLOW =="
-                  echo "1. name: Nome do workflow"
-                  echo "2. on: Evento que dispara o workflow"
-                  echo "3. jobs: Conjunto de tarefas a serem executadas"
-                  echo "4. runs-on: Ambiente onde as tarefas serão executadas"
-                  echo "5. steps: Passos a serem executados dentro de cada job"
-                  echo ""
-                  echo " Total de elementos obrigatórios: 5"
+      - name: Elementos obrigatórios do workflow
+        run: |
+          echo "== ELEMENTOS OBRIGATÓRIOS DO WORKFLOW =="
+          echo "1. name: Nome do workflow"
+          echo "2. on: Evento que dispara o workflow"
+          echo "3. jobs: Conjunto de tarefas a serem executadas"
+          echo "4. runs-on: Ambiente onde as tarefas serão executadas"
+          echo "5. steps: Passos a serem executados dentro de cada job"
+          echo ""
+          echo " Total de elementos obrigatórios: 5"
             
-            - name: Váriaveis e contexto
-                run: | 
-                    echo "== VARIÁVEIS E CONTEXTO =="
-                    echo " Variáveis env: ${{ env.NODE_VERSION}} "
-                    echo "1. env: Variáveis de ambiente para o workflow"
-                    echo "2. context: Informações sobre o ambiente de execução"
-                    echo ""
-                    echo " Total de variáveis e contexto: 2"
+      - name: Váriaveis e contexto
+        run: | 
+          echo "== VARIÁVEIS E CONTEXTO =="
+          echo " Variáveis env: ${{ env.NODE_VERSION }} "
+          echo "1. env: Variáveis de ambiente para o workflow"
+          echo "2. context: Informações sobre o ambiente de execução"
+          echo ""
+          echo " Total de variáveis e contexto: 2"
